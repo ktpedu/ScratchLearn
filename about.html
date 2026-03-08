@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Security Meta Tags -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https: http:; frame-src 'self' https://scratch.mit.edu https://www.youtube.com https://scratch-quest.my.canva.site; connect-src 'self' https://script.google.com https://script.googleusercontent.com;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <title>บทเรียนออนไลน์ Scratch Programming</title>
+     <link rel="icon" type="image/jpeg" href="assets/LOGOprofile.jpg">
+    <!-- Google Fonts: Kanit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Navigation Header -->
+    <header class="navbar">
+      <div class="container nav-container">
+        <!-- Left Group: Toggle + Logo -->
+        <div class="left-nav-group">
+          <!-- Theme Toggle (Moved to Left) -->
+          <button class="theme-toggle left-aligned-toggle" id="theme-toggle" type="button" aria-label="Toggle Dark Mode">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+
+          <!-- Logo -->
+          <a href="index.html" class="logo">
+            <i class="fa-solid fa-cat logo-icon"></i>
+            <span>Scratch<span class="highlight">Learn</span></span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobile-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Navigation Links -->
+        <nav class="nav-links" id="nav-links">
+          <a href="index.html" class="nav-item">หน้าแรก</a>
+          <a href="about.html" class="nav-item active">เกี่ยวกับรายวิชา</a>
+
+          <!-- Dropdown Menu -->
+          <div class="nav-item dropdown">
+            <button class="dropbtn">
+              บทเรียน <i class="fa-solid fa-chevron-down text-sm"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="unit1.html">หน่วยที่ 1 - รู้จักโปรแกรม Scratch</a>
+              <a href="unit2.html">หน่วยที่ 2 - การเคลื่อนที่และเสียง</a>
+              <a href="unit3.html">หน่วยที่ 3 - การวาดและการสร้างตัวละคร</a>
+              <a href="unit4.html">หน่วยที่ 4 - เงื่อนไขและการรับค่า</a>
+              <a href="unit5.html">หน่วยที่ 5 - การสร้างเกมเบื้องต้น</a>
+              <a href="project.html">โครงงาน (Project)</a>
+            </div>
+          </div>
+
+          <a href="quiz.html" class="nav-item">แบบทดสอบ</a>
+          <a href="scratch-lab.html" class="nav-item">Scratch Lab</a>
+          <a href="media.html" class="nav-item">คลังสื่อ</a>
+          <a href="webboard.html" class="nav-item">กระดานสนทนา</a>
+          <a href="contact.html" class="nav-item btn-contact">ติดต่อครู</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="page-header unit-header">
+        <div class="container">
+            <h1 class="unit-title" style="margin-bottom: 10px;">เกี่ยวกับรายวิชา</h1>
+            <p class="unit-description">คำอธิบายรายวิชา ผลการเรียนรู้ และโครงสร้างเนื้อหา</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section" style="padding: 60px 0; min-height: 50vh;">
+        <div class="container" style="max-width: 800px; margin: 0 auto;">
+            <div style="background: var(--surface-color); padding: 40px; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--border-color-light);">
+            <h2 style="color: var(--primary-color); margin-bottom: 20px; font-size: 1.8rem;">คำอธิบายรายวิชา (Course Description)</h2>
+            <p style="margin-bottom: 20px; color: var(--text-main); line-height: 1.8;">
+                ศึกษาเกี่ยวกับการเขียนโปรแกรมเบื้องต้นด้วยภาษา Scratch การทำงานแบบลำดับ การตัดสินใจ และการทำซ้ำ 
+                ใช้แนวคิดเชิงคำนวณในการออกแบบอัลกอริทึม การแก้ปัญหา การเขียนโปรแกรมเพื่อสร้างแอนิเมชัน เกม 
+                และโครงงานสร้างสรรค์ เพื่อพัฒนาทักษะการคิดอย่างเป็นระบบ และสามารถนำไปประยุกต์ใช้ในชีวิตประจำวันได้
+            </p>
+
+            <h2 style="color: var(--primary-color); margin-bottom: 20px; font-size: 1.8rem; margin-top: 40px;">ผลการเรียนรู้ที่คาดหวัง</h2>
+            <ul style="list-style-type: none; padding-left: 0; color: var(--text-main); line-height: 1.8;">
+                <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: var(--primary-color); margin-right: 10px;"></i> เข้าใจหลักการทำงานเบื้องต้นของโปรแกรม Scratch</li>
+                <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: var(--primary-color); margin-right: 10px;"></i> สามารถเขียนคำสั่งควบคุมการเคลื่อนที่และการแสดงผลได้</li>
+                <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: var(--primary-color); margin-right: 10px;"></i> ประยุกต์ใช้คำสั่งเงื่อนไขและการรับค่ามาสร้างชิ้นงานได้</li>
+                <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: var(--primary-color); margin-right: 10px;"></i> ออกแบบและสร้างโครงงานเกมหรือแอนิเมชันอย่างสร้างสรรค์</li>
+            </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-line"></div>
+            <p class="copyright">© 2025 Scratch Web-Based Instruction | PANIITTHA BOONYONG </p>
+            <p class="sub-footer">WANGNAMYENWITTAYAKOM SCHOOL • SECONDARY EDUCATIONAL SERVICE AREA OFFICE SA KAEO</p>
+        </div>
+    </footer>
+
+    <!-- Custom Script -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

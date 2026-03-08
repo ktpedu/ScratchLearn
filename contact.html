@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Security Meta Tags -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https: http:; frame-src 'self' https://scratch.mit.edu https://www.youtube.com https://scratch-quest.my.canva.site; connect-src 'self' https://script.google.com https://script.googleusercontent.com;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <title>บทเรียนออนไลน์ Scratch Programming</title>
+     <link rel="icon" type="image/jpeg" href="assets/LOGOprofile.jpg">
+    <!-- Google Fonts: Kanit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Navigation Header -->
+    <header class="navbar">
+      <div class="container nav-container">
+        <!-- Left Group: Toggle + Logo -->
+        <div class="left-nav-group">
+          <!-- Theme Toggle (Moved to Left) -->
+          <button class="theme-toggle left-aligned-toggle" id="theme-toggle" type="button" aria-label="Toggle Dark Mode">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+
+          <!-- Logo -->
+          <a href="index.html" class="logo">
+            <i class="fa-solid fa-cat logo-icon"></i>
+            <span>Scratch<span class="highlight">Learn</span></span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobile-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Navigation Links -->
+        <nav class="nav-links" id="nav-links">
+          <a href="index.html" class="nav-item">หน้าแรก</a>
+          <a href="about.html" class="nav-item">เกี่ยวกับรายวิชา</a>
+
+          <!-- Dropdown Menu -->
+          <div class="nav-item dropdown">
+            <button class="dropbtn">
+              บทเรียน <i class="fa-solid fa-chevron-down text-sm"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="unit1.html">หน่วยที่ 1 - รู้จักโปรแกรม Scratch</a>
+              <a href="unit2.html">หน่วยที่ 2 - การเคลื่อนที่และเสียง</a>
+              <a href="unit3.html">หน่วยที่ 3 - การวาดและการสร้างตัวละคร</a>
+              <a href="unit4.html">หน่วยที่ 4 - เงื่อนไขและการรับค่า</a>
+              <a href="unit5.html">หน่วยที่ 5 - การสร้างเกมเบื้องต้น</a>
+              <a href="project.html">โครงงาน (Project)</a>
+            </div>
+          </div>
+
+          <a href="quiz.html" class="nav-item">แบบทดสอบ</a>
+          <a href="scratch-lab.html" class="nav-item">Scratch Lab</a>
+          <a href="media.html" class="nav-item">คลังสื่อ</a>
+          <a href="webboard.html" class="nav-item">กระดานสนทนา</a>
+          <a href="contact.html" class="nav-item btn-contact active">ติดต่อครู</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="page-header unit-header">
+        <div class="container">
+            <h1 class="unit-title" style="margin-bottom: 10px;">ติดต่อผู้สอน (Contact)</h1>
+            <p class="unit-description">ช่องทางการติดต่อและส่งข้อความถึงผู้สอน</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section" style="padding: 60px 0; min-height: 50vh;">
+        <div class="container" style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+            <!-- Contact Info -->
+            <div style="background: var(--surface-color); padding: 40px; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--border-color-light);">
+                <h3 style="font-size: 1.5rem; margin-bottom: 25px; color: var(--primary-color);">ข้อมูลการติดต่อ</h3>
+                
+                <div style="display: flex; flex-direction: column; gap: 20px;">
+                    <div style="display: flex; gap: 15px; align-items: flex-start;">
+                        <div style="width: 60px; height: 60px; border-radius: 50%; overflow: hidden; display: flex; justify-content: center; align-items: center; flex-shrink: 0; border: 2px solid rgba(255, 107, 53, 0.3); box-shadow: var(--shadow-sm);">
+                            <img src="assets/Profile.jpg" alt="Profile Picture" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1.1rem; margin-bottom: 5px;">ผู้สอน</h4>
+                            <p style="color: var(--text-muted);">ครูปณิฏฐา  บุญยงค์ <br>(PANIITTHA BOONYONG)</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 15px; align-items: flex-start;">
+                        <div style="width: 40px; height: 40px; background: rgba(255, 107, 53, 0.1); color: var(--primary-color); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.2rem; flex-shrink: 0;">
+                            <i class="fa-solid fa-school"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1.1rem; margin-bottom: 5px;">สถานที่ทำงาน</h4>
+                            <p style="color: var(--text-muted);">โรงเรียนวังน้ำเย็นวิทยาคม (WANGNAMYENWITTAYAKOM SCHOOL)<br>สำนักงานเขตพื้นที่การศึกษามัธยมศึกษาสระแก้ว</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 15px; align-items: flex-start;">
+                        <div style="width: 40px; height: 40px; background: rgba(255, 107, 53, 0.1); color: var(--primary-color); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.2rem; flex-shrink: 0;">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1.1rem; margin-bottom: 5px;">อีเมล</h4>
+                            <p style="color: var(--text-muted);">panittha.edu@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div style="background: var(--surface-color); padding: 40px; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--border-color-light);">
+                <h3 style="font-size: 1.5rem; margin-bottom: 25px; color: var(--text-main);">ส่งข้อความ</h3>
+                <form id="contactForm">
+                    <div style="margin-bottom: 15px;">
+                        <label style="display: block; margin-bottom: 5px; color: var(--text-main); font-weight: 500;">ชื่อ-นามสกุล / ชื่อผู้ใช้</label>
+                        <input type="text" id="senderName" name="name" required style="width: 100%; padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--border-color-light); background: var(--bg-color); color: var(--text-main); font-family: inherit;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label style="display: block; margin-bottom: 5px; color: var(--text-main); font-weight: 500;">หัวข้อที่ต้องการติดต่อ</label>
+                        <select id="senderSubject" name="subject" required style="width: 100%; padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--border-color-light); background: var(--bg-color); color: var(--text-main); font-family: inherit;">
+                            <option value="">-- เลือกหัวข้อ --</option>
+                            <option value="สอบถามเนื้อหาบทเรียน">สอบถามเนื้อหาบทเรียน</option>
+                            <option value="แจ้งปัญหาการใช้งานเว็บไซต์">แจ้งปัญหาการใช้งานเว็บไซต์</option>
+                            <option value="เรื่องอื่นๆ">เรื่องอื่นๆ</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 5px; color: var(--text-main); font-weight: 500;">รายละเอียด</label>
+                        <textarea id="senderMessage" name="message" required rows="4" style="width: 100%; padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--border-color-light); background: var(--bg-color); color: var(--text-main); font-family: inherit; resize: vertical;"></textarea>
+                    </div>
+                    <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 12px;">ส่งข้อความ <i class="fa-solid fa-paper-plane"></i></button>
+                    <p id="formStatus" style="margin-top: 15px; text-align: center; font-weight: 500; display: none;"></p>
+                </form>
+
+                <script>
+                    const form = document.getElementById('contactForm');
+                    const submitBtn = document.getElementById('submitBtn');
+                    const formStatus = document.getElementById('formStatus');
+
+                    // ========================================================
+                    // ⚠️ วาง URL ของ Google Apps Script ที่คุณได้จากการ Deploy ที่นี่
+                    // ========================================================
+                    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzxQ1jthxMgATuM4Rye2tyV13CzPwc_xi205m78oAwBFAGm2xNsK2HWhpeKlwGs-CtH/exec'; 
+
+                    form.addEventListener('submit', e => {
+                        e.preventDefault();
+                        
+                        // ป้องกันการกดซ้ำ
+                        submitBtn.disabled = true;
+                        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> กำลังส่งข้อความ...';
+                        formStatus.style.display = 'none';
+
+                        // เก็บข้อมูลจากฟอร์ม
+                        const formData = new FormData();
+                        formData.append('name', document.getElementById('senderName').value);
+                        formData.append('subject', document.getElementById('senderSubject').value);
+                        formData.append('message', document.getElementById('senderMessage').value);
+
+                        // ส่งข้อมูลไปยัง Google Apps Script
+                        fetch(GOOGLE_SCRIPT_URL, {
+                            method: 'POST',
+                            body: formData
+                        })
+                        .then(response => response.text())
+                        .then(data => {
+                            // ส่งสำเร็จ
+                            formStatus.style.display = 'block';
+                            formStatus.style.color = 'green';
+                            formStatus.innerHTML = '<i class="fa-solid fa-check-circle"></i> ส่งข้อความถึงคุณครูเรียบร้อยแล้ว!';
+                            form.reset(); // ล้างแบบฟอร์ม
+                        })
+                        .catch(error => {
+                            // เกิดข้อผิดพลาด
+                            formStatus.style.display = 'block';
+                            formStatus.style.color = 'red';
+                            formStatus.innerHTML = '<i class="fa-solid fa-times-circle"></i> เกิดข้อผิดพลาด ไม่สามารถส่งข้อความได้ โปรดลองอีกครั้ง (อาจจะยังไม่ได้ใส่ URL หรือ URL ไม่ถูกต้อง)';
+                        })
+                        .finally(() => {
+                            // คืนค่าปุ่มให้กดใหม่ได้
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = 'ส่งข้อความ <i class="fa-solid fa-paper-plane"></i>';
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-line"></div>
+            <p class="copyright">© 2025 Scratch Web-Based Instruction | PANIITTHA BOONYONG </p>
+            <p class="sub-footer">WANGNAMYENWITTAYAKOM SCHOOL • SECONDARY EDUCATIONAL SERVICE AREA OFFICE SA KAEO</p>
+        </div>
+    </footer>
+
+    <!-- Custom Script -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

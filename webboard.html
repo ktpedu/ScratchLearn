@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Security Meta Tags -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https: http:; frame-src 'self' https://scratch.mit.edu https://www.youtube.com https://scratch-quest.my.canva.site; connect-src 'self' https://script.google.com https://script.googleusercontent.com;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <title>บทเรียนออนไลน์ Scratch Programming</title>
+     <link rel="icon" type="image/jpeg" href="assets/LOGOprofile.jpg">
+    <!-- Google Fonts: Kanit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Navigation Header -->
+    <header class="navbar">
+      <div class="container nav-container">
+        <!-- Left Group: Toggle + Logo -->
+        <div class="left-nav-group">
+          <!-- Theme Toggle (Moved to Left) -->
+          <button class="theme-toggle left-aligned-toggle" id="theme-toggle" type="button" aria-label="Toggle Dark Mode">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+
+          <!-- Logo -->
+          <a href="index.html" class="logo">
+            <i class="fa-solid fa-cat logo-icon"></i>
+            <span>Scratch<span class="highlight">Learn</span></span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobile-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Navigation Links -->
+        <nav class="nav-links" id="nav-links">
+          <a href="index.html" class="nav-item">หน้าแรก</a>
+          <a href="about.html" class="nav-item">เกี่ยวกับรายวิชา</a>
+
+          <!-- Dropdown Menu -->
+          <div class="nav-item dropdown">
+            <button class="dropbtn">
+              บทเรียน <i class="fa-solid fa-chevron-down text-sm"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="unit1.html">หน่วยที่ 1 - รู้จักโปรแกรม Scratch</a>
+              <a href="unit2.html">หน่วยที่ 2 - การเคลื่อนที่และเสียง</a>
+              <a href="unit3.html">หน่วยที่ 3 - การวาดและการสร้างตัวละคร</a>
+              <a href="unit4.html">หน่วยที่ 4 - เงื่อนไขและการรับค่า</a>
+              <a href="unit5.html">หน่วยที่ 5 - การสร้างเกมเบื้องต้น</a>
+              <a href="project.html">โครงงาน (Project)</a>
+            </div>
+          </div>
+
+          <a href="quiz.html" class="nav-item">แบบทดสอบ</a>
+          <a href="scratch-lab.html" class="nav-item">Scratch Lab</a>
+          <a href="media.html" class="nav-item">คลังสื่อ</a>
+          <a href="webboard.html" class="nav-item active">กระดานสนทนา</a>
+          <a href="contact.html" class="nav-item btn-contact">ติดต่อครู</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="page-header unit-header">
+        <div class="container">
+            <h1 class="unit-title" style="margin-bottom: 10px;">กระดานสนทนา (Webboard)</h1>
+            <p class="unit-description">พื้นที่แลกเปลี่ยนเรียนรู้ สอบถาม และพูดคุย</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section" style="padding: 60px 0; min-height: 50vh;">
+        <div class="container" style="max-width: 900px; margin: 0 auto;">
+            <!-- Actions -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; flex-wrap: wrap; gap: 15px;">
+                <div style="display: flex; gap: 10px; width: 100%; max-width: 400px;">
+                    <input type="text" id="searchInput" placeholder="ค้นหากระทู้..." style="flex: 1; padding: 10px 15px; border-radius: var(--radius-md); border: 1px solid var(--border-color-light); background: var(--surface-color); color: var(--text-main);">
+                    <button class="btn btn-primary" onclick="searchTopics()" style="padding: 10px 20px; border-radius: var(--radius-md);"><i class="fa-solid fa-search"></i></button>
+                </div>
+                <button class="btn btn-primary" onclick="openNewTopicModal()"><i class="fa-solid fa-plus"></i> ตั้งกระทู้ใหม่</button>
+            </div>
+
+            <!-- Board List -->
+            <div id="topicsContainer" style="background: var(--surface-color); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--border-color-light); overflow: hidden;">
+                <!-- Topics will be dynamically loaded here by webboard.js -->
+                <div style="padding: 40px; text-align: center; color: var(--text-muted);">
+                    <i class="fa-solid fa-spinner fa-spin" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                    <p>กำลังโหลดกระทู้...</p>
+                </div>
+            </div>
+            
+            <!-- Pagination Placeholder -->
+            <div style="display: flex; justify-content: center; gap: 5px; margin-top: 30px;">
+                <button class="btn btn-outline" style="padding: 5px 12px; font-size: 0.9rem;">&lt;</button>
+                <button class="btn btn-primary" style="padding: 5px 12px; font-size: 0.9rem;">1</button>
+                <button class="btn btn-outline" style="padding: 5px 12px; font-size: 0.9rem;">2</button>
+                <button class="btn btn-outline" style="padding: 5px 12px; font-size: 0.9rem;">3</button>
+                <button class="btn btn-outline" style="padding: 5px 12px; font-size: 0.9rem;">&gt;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-line"></div>
+            <p class="copyright">© 2025 Scratch Web-Based Instruction | PANIITTHA BOONYONG </p>
+            <p class="sub-footer">WANGNAMYENWITTAYAKOM SCHOOL • SECONDARY EDUCATIONAL SERVICE AREA OFFICE SA KAEO</p>
+        </div>
+    </footer>
+
+    <!-- New Topic Modal -->
+    <div id="newTopicModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>ตั้งกระทู้ใหม่</h2>
+                <button class="modal-close" onclick="closeNewTopicModal()"><i class="fa-solid fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="topicTitle">หัวข้อกระทู้</label>
+                    <input type="text" id="topicTitle" class="form-control" placeholder="ระบุหัวข้อที่ต้องการสนทนา...">
+                </div>
+                <div class="form-group">
+                    <label for="topicAuthor">ชื่อผู้ตั้งกระทู้</label>
+                    <input type="text" id="topicAuthor" class="form-control" placeholder="ชื่อของคุณ...">
+                </div>
+                <div class="form-group">
+                    <label for="topicCategory">หมวดหมู่</label>
+                    <select id="topicCategory" class="form-control">
+                        <option value="สอบถามการเขียนโค้ด">สอบถามการเขียนโค้ด</option>
+                        <option value="โชว์ผลงาน">โชว์ผลงาน</option>
+                        <option value="พูดคุยทั่วไป">พูดคุยทั่วไป</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" onclick="closeNewTopicModal()">ยกเลิก</button>
+                <button class="btn btn-primary" onclick="submitNewTopic()">บันทึกกระทู้</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Script -->
+    <script src="js/script.js"></script>
+    <script src="js/webboard.js"></script>
+  </body>
+</html>

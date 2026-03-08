@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Security Meta Tags -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https: http:; frame-src 'self' https://scratch.mit.edu https://www.youtube.com https://scratch-quest.my.canva.site; connect-src 'self' https://script.google.com https://script.googleusercontent.com;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <title>บทเรียนออนไลน์ Scratch Programming</title>
+     <link rel="icon" type="image/jpeg" href="assets/LOGOprofile.jpg">
+    <!-- Google Fonts: Kanit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Navigation Header -->
+    <header class="navbar">
+      <div class="container nav-container">
+        <!-- Left Group: Toggle + Logo -->
+        <div class="left-nav-group">
+          <!-- Theme Toggle (Moved to Left) -->
+          <button class="theme-toggle left-aligned-toggle" id="theme-toggle" type="button" aria-label="Toggle Dark Mode">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+
+          <!-- Logo -->
+          <a href="index.html" class="logo">
+            <i class="fa-solid fa-cat logo-icon"></i>
+            <span>Scratch<span class="highlight">Learn</span></span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobile-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Navigation Links -->
+        <nav class="nav-links" id="nav-links">
+          <a href="index.html" class="nav-item">หน้าแรก</a>
+          <a href="about.html" class="nav-item">เกี่ยวกับรายวิชา</a>
+
+          <!-- Dropdown Menu -->
+          <div class="nav-item dropdown">
+            <button class="dropbtn">
+              บทเรียน <i class="fa-solid fa-chevron-down text-sm"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="unit1.html">หน่วยที่ 1 - รู้จักโปรแกรม Scratch</a>
+              <a href="unit2.html">หน่วยที่ 2 - การเคลื่อนที่และเสียง</a>
+              <a href="unit3.html">หน่วยที่ 3 - การวาดและการสร้างตัวละคร</a>
+              <a href="unit4.html">หน่วยที่ 4 - เงื่อนไขและการรับค่า</a>
+              <a href="unit5.html">หน่วยที่ 5 - การสร้างเกมเบื้องต้น</a>
+              <a href="project.html">โครงงาน (Project)</a>
+            </div>
+          </div>
+
+          <a href="quiz.html" class="nav-item">แบบทดสอบ</a>
+          <a href="scratch-lab.html" class="nav-item active">Scratch Lab</a>
+          <a href="media.html" class="nav-item">คลังสื่อ</a>
+          <a href="webboard.html" class="nav-item">กระดานสนทนา</a>
+          <a href="contact.html" class="nav-item btn-contact">ติดต่อครู</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="page-header unit-header">
+        <div class="container">
+            <h1 class="unit-title" style="margin-bottom: 10px;">Scratch Lab</h1>
+            <p class="unit-description">พื้นที่ปฏิบัติการเขียนโปรแกรม Scratch ผ่านเว็บไซต์</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section" style="padding: 40px 0; min-height: 60vh;">
+        <div class="container" style="max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px;">
+            
+            <!-- Example Projects Section -->
+            <div>
+                <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: var(--primary-color);">
+                   <i class="fa-solid fa-lightbulb" style="margin-right: 10px;"></i> ตัวอย่างผลงาน (Example Projects)
+                </h3>
+                <p style="color: var(--text-muted); margin-bottom: 25px;">
+                    ศึกษาโค้ดและวิธีการทำงานจากโปรเจกต์ตัวอย่างเหล่านี้ เพื่อเป็นไอเดียในการสร้างสรรค์ผลงานของคุณเอง
+                </p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <!-- Example 1 -->
+                    <div style="background: var(--surface-color); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color-light); padding: 15px;">
+                        <iframe src="https://scratch.mit.edu/projects/318534887/embed" allowtransparency="true" width="100%" height="250" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                        <h4 style="margin: 15px 0 5px 0; font-size: 1.1rem; color: var(--primary-color);">เกมผจญภัย (Adventure Game)</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">เรียนรู้วิธีการควบคุมตัวละครผ่านด่านต่างๆ อย่างอิสระและการเก็บคะแนน</p>
+                    </div>
+
+                    <!-- Example 2 -->
+                    <div style="background: var(--surface-color); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color-light); padding: 15px;">
+                        <iframe src="https://scratch.mit.edu/projects/104149814/embed" allowtransparency="true" width="100%" height="250" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                        <h4 style="margin: 15px 0 5px 0; font-size: 1.1rem; color: #cf63cf;">แอนิเมชัน (Animation)</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">ตัวอย่างน่ารักของการใช้บล็อกคำสั่งรูปลักษณ์เพื่อสร้างการเคลื่อนไหวที่สมจริง</p>
+                    </div>
+                    
+                    <!-- Example 3 -->
+                    <div style="background: var(--surface-color); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color-light); padding: 15px;">
+                        <iframe src="https://scratch.mit.edu/projects/142858807/embed" allowtransparency="true" width="100%" height="250" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                        <h4 style="margin: 15px 0 5px 0; font-size: 1.1rem; color: #5cb1d6;">การวาดภาพ (Drawing)</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">เพิ่มลูกเล่นให้กับตัวละครด้วยส่วนขยาย Pen ที่จะมาสร้างลวดลายสวยงามตระการตา</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lab Work Area -->
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+            <div style="background: var(--surface-color); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color-light); display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h3 style="margin-bottom: 5px; font-size: 1.1rem;">Scratch 3.0 Editor</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">สร้าง บันทึก และแบ่งปันผลงานของคุณ</p>
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <button class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;" onclick="alert('⚡ คำแนะนำจากระบบ:\n\nการเพิ่มพื้นที่ทำงานของ Scratch เป็นระบบแยกส่วน (iframe) เพื่อความปลอดภัย จึงไม่สามารถดึงไฟล์จากปุ่มภายนอกได้โดยตรง\n\n👉 วิธีเปิดไฟล์ (Load):\n1. คลิกเมนู \'แฟ้ม\' หรือ \'File\' ที่แถบด้านบนซ้ายสังกัดหน้าจอ Scratch\n2. เลือก \'อัปโหลดจากคอมพิวเตอร์ของคุณ\' (Load from your computer)\n3. เลือกไฟล์นามสกุล .sb3 ของคุณได้เลยครับ!')"><i class="fa-solid fa-folder-open"></i> เปิดไฟล์</button>
+                    <button class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;" onclick="alert('⚡ คำแนะนำจากระบบ:\n\nการเพิ่มพื้นที่ทำงานของ Scratch เป็นระบบแยกส่วน (iframe) เพื่อความปลอดภัย จึงไม่สามารถบันทึกไฟล์สครัชจากปุ่มภายนอกได้โดยตรง\n\n👉 วิธีบันทึกผลงาน (Save):\n1. คลิกเมนู \'แฟ้ม\' หรือ \'File\' ที่แถบด้านบนซ้ายสังกัดหน้าจอ Scratch\n2. เลือก \'บันทึกลงในคอมพิวเตอร์ของคุณ\' (Save to your computer)\n3. ไฟล์ผลงาน .sb3 ของคุณจะถูกดาวน์โหลดลงเครื่องทันทีครับ!')"><i class="fa-solid fa-download"></i> บันทึกผลงาน</button>
+                </div>
+            </div>
+            
+            <!-- Editor Embed -->
+            <a href="https://scratch.mit.edu" target="_blank" style="display: block; width: 100%; height: 600px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color-light); box-shadow: var(--shadow-sm); cursor: pointer; text-decoration: none;">
+                <iframe src="https://scratch.mit.edu/projects/1151662998/embed" allowtransparency="true" width="100%" height="800" frameborder="0" scrolling="no" allowfullscreen style="pointer-events: none;"></iframe>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-line"></div>
+            <p class="copyright">© 2025 Scratch Web-Based Instruction | PANIITTHA BOONYONG </p>
+            <p class="sub-footer">WANGNAMYENWITTAYAKOM SCHOOL • SECONDARY EDUCATIONAL SERVICE AREA OFFICE SA KAEO</p>
+        </div>
+    </footer>
+
+    <!-- Custom Script -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
