@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 2. Mobile & iPad Dropdown Toggle (ปรับปรุงส่วนนี้เพื่อรองรับ iPad)
+  // 2. Mobile & iPad Dropdown Toggle (ปรับปรุงเพื่อรองรับการสัมผัสบน iPad)
   const dropdownBtn = document.querySelector(".dropbtn");
   const dropdown = document.querySelector(".dropdown");
 
@@ -28,14 +28,14 @@ document.addEventListener("DOMContentLoaded", () => {
       // ตรวจสอบว่าเป็นหน้าจอ Tablet/Mobile (กว้างน้อยกว่าหรือเท่ากับ 991px ตาม CSS ใหม่)
       if (window.innerWidth <= 991) {
         e.preventDefault();
-        e.stopPropagation(); // ป้องกันการส่งต่อ Event
+        e.stopPropagation(); // ป้องกันการส่งต่อ Event ไปยัง Document
         dropdown.classList.toggle("active");
       }
     });
 
-    // ปิดเมนูเมื่อคลิกข้างนอก (สำหรับ iPad)
+    // ปิดเมนูเมื่อคลิกข้างนอก (สำหรับ iPad และ Mobile)
     document.addEventListener("click", (e) => {
-      if (!dropdown.contains(e.target) && dropdown.classList.contains("active")) {
+      if (dropdown.classList.contains("active") && !dropdown.contains(e.target)) {
         dropdown.classList.remove("active");
       }
     });
@@ -61,12 +61,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Check for saved user preference, if any, on load of the website
     let currentTheme = localStorage.getItem('theme');
 
-    // กำหนดโหมดมืดเป็นค่าเริ่มต้น
+    // กำหนดโหมดมืดเป็นค่าเริ่มต้น หากยังไม่มีการบันทึกข้อมูล
     if (!currentTheme) {
       currentTheme = 'dark';
     }
 
-    // เซ็ตธีมปัจจุบัน
+    // เซ็ตธีมปัจจุบันตามค่าที่ดึงมาได้
     document.documentElement.setAttribute('data-theme', currentTheme);
     if (currentTheme === 'dark') {
       themeIcon.classList.remove('fa-moon');
@@ -94,10 +94,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 5. ระบบป้องกันการคัดลอกและดูโค้ด (Anti-Copy System)
-  // บล็อคคลิกขวา
+  // บล็อคคลิกขวา (Context Menu)
   document.addEventListener('contextmenu', event => event.preventDefault());
 
-  // บล็อคการคลุมดำเลือกข้อความ
+  // บล็อคการคลุมดำเลือกข้อความ (Select Start)
   document.addEventListener('selectstart', event => {
     // อนุญาตให้คลุมดำในช่องพิมพ์ข้อความ (input/textarea) เท่านั้น
     if (event.target.tagName !== 'INPUT' && event.target.tagName !== 'TEXTAREA') {
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // บล็อคการลากวาง (กันลากรูป ก๊อปปี้ไปที่อื่น)
+  // บล็อคการลากวาง (Drag Start) เพื่อกันการลากรูปภาพหรือข้อความ
   document.addEventListener('dragstart', event => event.preventDefault());
 
   // บล็อคปุ่มคีย์บอร์ดที่เกี่ยวข้องกับการดูโค้ดและคัดลอก
@@ -115,26 +115,37 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
     }
 
-    // Ctrl/Cmd กดยากขึ้น
+    // ตรวจสอบการกด Ctrl (Windows) หรือ Command (Mac)
     if (event.ctrlKey || event.metaKey) {
       const key = event.key ? event.key.toLowerCase() : '';
+      
       // Ctrl+U (ดู Source Code)
-      if (key === 'u' || event.keyCode === 85) event.preventDefault();
-      // Ctrl+S (เซฟหน้าเว็บ)
-      if (key === 's' || event.keyCode === 83) event.preventDefault();
-      // Ctrl+C (คัดลอก) - อนุญาตเฉพาะเวลาพิมพ์ในช่องพิมพ์
-      if ((key === 'c' || event.keyCode === 67) && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+      if (key === 'u' || event.keyCode === 85) {
         event.preventDefault();
       }
-      // Ctrl+A (เลือกทั้งหมด)
-      if ((key === 'a' || event.keyCode === 65) && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+      // Ctrl+S (เซฟหน้าเว็บ)
+      if (key === 's' || event.keyCode === 83) {
+        event.preventDefault();
+      }
+      // Ctrl+C (คัดลอก) - อนุญาตเฉพาะเมื่ออยู่ในช่องพิมพ์
+      if ((key === 'c' || event.keyCode === 67) && 
+          document.activeElement.tagName !== 'INPUT' && 
+          document.activeElement.tagName !== 'TEXTAREA') {
+        event.preventDefault();
+      }
+      // Ctrl+A (เลือกทั้งหมด) - อนุญาตเฉพาะเมื่ออยู่ในช่องพิมพ์
+      if ((key === 'a' || event.keyCode === 65) && 
+          document.activeElement.tagName !== 'INPUT' && 
+          document.activeElement.tagName !== 'TEXTAREA') {
         event.preventDefault();
       }
 
-      // Ctrl+Shift+I / J / C (เปิด DevTools รูปแบบต่างๆ)
+      // ตรวจสอบการกด Shift ร่วมด้วย (เช่น Ctrl+Shift+I)
       if (event.shiftKey) {
+        // Ctrl+Shift+I / J (เปิด DevTools)
         if (key === 'i' || event.keyCode === 73) event.preventDefault();
         if (key === 'j' || event.keyCode === 74) event.preventDefault();
+        // Ctrl+Shift+C (Inspect Element)
         if (key === 'c' || event.keyCode === 67) event.preventDefault();
       }
     }
