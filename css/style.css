@@ -644,7 +644,7 @@ footer {
 }
 
 /* =========================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN (ปรับปรุง Dropdown สำหรับ iPad/Mobile)
    ========================================= */
 @media (max-width: 992px) {
   .hero-title {
@@ -673,16 +673,18 @@ footer {
     top: var(--navbar-height);
     left: 0;
     width: 100%;
+    height: calc(100vh - var(--navbar-height)); /* ให้เมนูยาวพอดีหน้าจอ */
     background-color: var(--surface-color); /* Updated for dark mode support */
     flex-direction: column;
     align-items: flex-start;
-    padding: 20px 5%;
+    padding: 20px 0; /* ปรับ Padding เพื่อให้ Accordion สวยงาม */
     box-shadow: var(--shadow-md);
     transform: translateY(-150%);
     opacity: 0;
     transition: var(--transition-normal);
     border-top: 1px solid var(--border-color-light);
-    gap: 10px;
+    gap: 0; /* เปลี่ยน Gap เป็น 0 เพื่อให้รายการชิดกันแบบ Accordion */
+    overflow-y: auto; /* เผื่อเมนูยาวเกินหน้าจอ */
   }
 
   .nav-links.active {
@@ -690,28 +692,60 @@ footer {
     opacity: 1;
   }
 
-  .nav-item {
+  .nav-item, .dropdown {
     width: 100%;
     display: block;
+    border-bottom: 1px solid var(--border-color-light);
   }
+
+  .nav-item {
+    padding: 15px 5%;
+  }
+
   .mobile-toggle {
     display: block;
   }
 
+  /* --- แก้ไขส่วน Dropdown ให้เป็น Accordion (กางลงมา) --- */
+  .dropbtn {
+    width: 100%;
+    padding: 15px 5%;
+    justify-content: space-between; /* ให้ลูกศรอยู่ขวาสุด */
+    font-size: 1rem;
+    color: var(--text-main);
+  }
+
   .dropdown-content {
-    position: static;
-    box-shadow: none;
+    position: static; /* เปลี่ยนจาก absolute เป็น static เพื่อดันเนื้อหาลงมา */
     visibility: visible;
     opacity: 1;
-    display: none;
-    transform: translateY(0);
-    border-left: 2px solid var(--primary-light);
-    margin-left: 10px;
-    background-color: transparent;
+    display: none; /* ซ่อนไว้ก่อน */
+    transform: none; /* ล้างค่าเลื่อนดั้งเดิม */
+    width: 100%;
+    box-shadow: none;
+    border: none;
+    border-top: 1px solid var(--border-color-light);
+    background-color: rgba(255, 107, 53, 0.03); /* ใส่สีพื้นหลังอ่อนๆ ให้เห็นขอบเขตเมนูย่อย */
+    padding: 5px 0;
+  }
+
+  [data-theme="dark"] .dropdown-content {
+    background-color: rgba(255, 107, 53, 0.05);
   }
 
   .dropdown.active .dropdown-content {
-    display: block;
+    display: block; /* แสดงเมื่อคลิก */
+  }
+
+  .dropdown-content a {
+    padding: 12px 10%; /* ดันเมนูย่อยเข้าไปข้างใน (Indent) */
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+
+  .dropdown-content a:hover {
+    padding-left: calc(10% + 10px);
+    background-color: rgba(255, 107, 53, 0.1);
   }
 
   .hero-title {
